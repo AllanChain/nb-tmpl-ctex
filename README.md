@@ -7,19 +7,27 @@ Chinese LaTeX/PDF template for Jupyter notebook `nbconvert` using CTeX.
 
 -----
 
-## Installation
+## 安装
 
 ```console
 pip install nb-tmpl-ctex
 ```
 
-## Usage
+## 使用
 
+通过 `nbconvert` 调用：
 ```bash
 # 默认 ctexart
 jupyter nbconvert example.ipynb --to pdf --template ctex
 # 使用 ctexrep
 jupyter nbconvert example.ipynb --to pdf --template ctex --template-file report
+```
+
+如果需要在 Jupyter 网页导出时自动使用 CTeX 模板，需要在 `~/.jupyter/jupyter_nbconvert_config.py` 将 `ctex` 模板设置为默认：
+
+```python
+c.LatexExporter.template_name = "ctex"
+# c.LatexExporter.template_file = "report"
 ```
 
 ## License
